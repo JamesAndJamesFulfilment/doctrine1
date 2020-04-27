@@ -2503,8 +2503,7 @@ abstract class Doctrine_Query_Abstract
                 }
             }
         }
-        // Empty the index part array to prevent us from accidentally appending twice.
-        $this->_index_parts = [];
+
         return $sql;
     }
 

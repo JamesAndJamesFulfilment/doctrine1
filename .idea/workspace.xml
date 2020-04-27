@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/composer.json" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="43377b38-8c4d-4b2c-aa49-f3de52af98f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/Doctrine/Query.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Doctrine/Query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Doctrine/Query/Abstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Doctrine/Query/Abstract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Doctrine/RawSql.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Doctrine/RawSql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Doctrine/Validator/Readonly.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Doctrine/Validator/Readonly.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Extension/TestExtension/lib/Doctrine/Template/TestBehavior.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Extension/TestExtension/lib/Doctrine/Template/TestBehavior.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Extension/TestExtension/lib/Doctrine/Test.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Extension/TestExtension/lib/Doctrine/Test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ExtensionTestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ExtensionTestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Record/FromArrayTestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Record/FromArrayTestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/2375/models1/Ticket_2375_Model1.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/2375/models1/Ticket_2375_Model1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/2375/models1/Ticket_2375_Model2.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/2375/models1/Ticket_2375_Model2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/2375/models2/Ticket_2375_Model3.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/2375/models2/Ticket_2375_Model3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/2375/models2/Ticket_2375_Model4.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/2375/models2/Ticket_2375_Model4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/2375/models2/Ticket_2375_Model5.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/2375/models2/Ticket_2375_Model5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/486TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/486TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/668TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/668TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/950TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/950TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Ticket/973TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Ticket/973TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/schema.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/schema.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/sandbox/doctrine" beforeDir="false" afterPath="$PROJECT_DIR$/tools/sandbox/doctrine" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Doctrine/Query/Abstract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="2505" lean-forward="true" selection-start-line="2505" selection-end-line="2505" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Doctrine/Query.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="2123" column="58" lean-forward="true" selection-start-line="2123" selection-start-column="58" selection-end-line="2123" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/Doctrine/RawSql.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="285" column="46" selection-start-line="285" selection-start-column="46" selection-end-line="285" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>_addDqlQueryPart</find>
+      <find>Constructor</find>
+      <find>getSqlQuery</find>
+      <find>function _apply</find>
+      <find>-&gt;getSqlQuery(</find>
+      <find>$this-&gt;_sql =</find>
+      <find>-&gt;_index_parts = []</find>
+      <find>-&gt;_index_parts =</find>
+      <find>getCountSql</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/lib/Doctrine/Query/Abstract.php" />
+        <option value="$PROJECT_DIR$/lib/Doctrine/Query.php" />
+        <option value="$PROJECT_DIR$/lib/Doctrine/RawSql.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="busybox:latest" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-963" />
+    <option name="y" value="1" />
+    <option name="width" value="970" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../posterspy-laravel6" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="43377b38-8c4d-4b2c-aa49-f3de52af98f7" name="Default Changelist" comment="" />
+      <created>1587673370435</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587673370435</updated>
+      <workItem from="1587673371576" duration="1583000" />
+      <workItem from="1587675746963" duration="219000" />
+      <workItem from="1587993867504" duration="219000" />
+      <workItem from="1587994093299" duration="3000" />
+      <workItem from="1587994100618" duration="372000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2396000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.51208794" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="GraphQL" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32971373" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Redis Servers" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Doctrine/Query/Abstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="2505" lean-forward="true" selection-start-line="2505" selection-end-line="2505" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Doctrine/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="2123" column="58" lean-forward="true" selection-start-line="2123" selection-start-column="58" selection-end-line="2123" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Doctrine/RawSql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="285" column="46" selection-start-line="285" selection-start-column="46" selection-end-line="285" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
