@@ -1038,6 +1038,9 @@ abstract class Doctrine_Query_Abstract
 
                     // Fix possible array parameter values in SQL params
                     $this->fixArrayParameterValues($this->getInternalParams());
+
+                    // Apply any non bound indexes
+                    $query = $this->_applyIndexesToQuery($query);
                 } else {
                     // Generate SQL or pick already processed one
                     $query = $this->getSqlQuery($params);
@@ -1058,8 +1061,6 @@ abstract class Doctrine_Query_Abstract
         } else {
             $query = $this->_view->getSelectSql();
         }
-
-        $query = $this->_applyIndexesToQuery($query);
 
         // Get prepared SQL params for execution
         $params = $this->getInternalParams();
