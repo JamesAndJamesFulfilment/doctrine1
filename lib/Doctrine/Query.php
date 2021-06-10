@@ -1037,9 +1037,9 @@ class Doctrine_Query extends Doctrine_Query_Abstract implements Countable
                     // We may still have pending conditions
                     $alias_lookup = empty($this->_derivedTable) ? $e[1] : end($e);
                     $alias = count($e) > 1
-                        ? $this->getComponentAlias($e[1])
+                        ? $this->getComponentAlias($alias_lookup)
                         : null;
-                    $where = $this->_processPendingJoinConditions($alias_lookup);
+                    $where = $this->_processPendingJoinConditions($alias);
 
                     // apply inheritance to WHERE part
                     if ( ! empty($where)) {
