@@ -295,7 +295,7 @@ class Doctrine_Lib
             }
         }
 
-        return $source;
+        return $destination;
     }
 
     /**
