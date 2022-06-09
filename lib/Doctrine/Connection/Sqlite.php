@@ -98,7 +98,7 @@ class Doctrine_Connection_Sqlite extends Doctrine_Connection_Common
 
         $connected = parent::connect();
 
-        if(!$hasConfigureStringify) {
+        if (!$hasConfigureStringify) {
             // PHP8.1 require default to true to keep BC
             // https://www.php.net/manual/en/migration81.incompatible.php#migration81.incompatible.pdo.sqlite
             // Can be overwritten by user later

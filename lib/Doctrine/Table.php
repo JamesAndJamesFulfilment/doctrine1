@@ -3205,10 +3205,10 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
     /**
      * Unserializes a Doctrine_Record instance for php 7.4+
      *
-     * @param array $data
+     * @param array $serialized
      */
-    public function __unserialize($data) {
-
+    public function __unserialize($data)
+    {
         $this->_identifier = $data[0];
         $this->_identifierType = $data[1];
         $this->_columns = $data[2];
