@@ -78,14 +78,14 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
      */
     const STATE_LOCKED     = 6;
 
- 	/**
- 	 * TLOCKED STATE
- 	 * a Doctrine_Record is temporarily locked (and transient) during deletes and saves
- 	 *
- 	 * This state is used internally to ensure that circular deletes
- 	 * and saves will not cause infinite loops
- 	 */
- 	const STATE_TLOCKED     = 7;
+    /**
+     * TLOCKED STATE
+     * a Doctrine_Record is temporarily locked (and transient) during deletes and saves
+     *
+     * This state is used internally to ensure that circular deletes
+     * and saves will not cause infinite loops
+     */
+    const STATE_TLOCKED     = 7;
 
 
     /**
@@ -1563,8 +1563,8 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
         } else if (in_array($type, array('integer', 'int')) && is_numeric($old) && is_numeric($new)) {
             return $old != $new;
         } else if ($type == 'timestamp' || $type == 'date') {
-            $oldStrToTime = @strtotime((string) $old);
-            $newStrToTime = @strtotime((string) $new);
+            $oldStrToTime = strtotime((string) $old);
+            $newStrToTime = strtotime((string) $new);
             if ($oldStrToTime && $newStrToTime) {
                 return $oldStrToTime !== $newStrToTime;
             } else {
@@ -2073,7 +2073,7 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
 
         // Eliminate relationships missing in the $array
         foreach ($this->_references as $name => $relation) {
-	        $rel = $this->getTable()->getRelation($name);
+            $rel = $this->getTable()->getRelation($name);
 
             if ( ! $rel->isRefClass() && ! isset($array[$name]) && ( ! $rel->isOneToOne() || ! isset($array[$rel->getLocalFieldName()]))) {
                 unset($this->$name);
@@ -2455,7 +2455,7 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
         // fix for #1622
         if ( ! isset($this->_references[$alias]) && $this->hasRelation($alias)) {
             $this->loadReference($alias);
-        }		
+        }
 
         $allIds = array();
         if (isset($this->_references[$alias])) {
