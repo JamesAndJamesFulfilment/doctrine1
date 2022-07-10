@@ -1133,7 +1133,7 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
         }
 
         // Php8.1 require a string
-        if(null === $orderBy) {
+        if (null === $orderBy) {
             $orderBy = '';
         }
 
