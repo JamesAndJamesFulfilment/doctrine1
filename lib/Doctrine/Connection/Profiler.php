@@ -154,7 +154,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
     /**
      * pop the last event from the event stack
      *
-     * @return Doctrine_Event
+     * @return Doctrine_Event|null
      */
     public function pop()
     {
