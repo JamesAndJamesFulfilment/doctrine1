@@ -121,7 +121,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      * getAll
      * returns all profiled events as an array
      *
-     * @return array        all events in an array
+     * @return Doctrine_Event[] All events in an array
      */
     public function getAll()
     {
