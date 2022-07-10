@@ -107,7 +107,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      * get
      *
      * @param mixed $key
-     * @return Doctrine_Event
+     * @return Doctrine_Event|null
      */
     public function get($key)
     {
