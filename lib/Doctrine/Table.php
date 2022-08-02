@@ -3201,7 +3201,7 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
     /**
      * Unserializes a Doctrine_Record instance for php 7.4+
      *
-     * @param array $serialized
+     * @param array $data
      */
     public function __unserialize($data) {
 
@@ -3219,10 +3219,8 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
     }
 
     /**
-     * Table loaded from cache, instead of __construct()
+     * Creates new instance and initialize it from cache.
      *
-     * @param Doctrine_Connection $conn
-     * @return void
      */
     public function initializeFromCache(Doctrine_Connection $conn)
     {
