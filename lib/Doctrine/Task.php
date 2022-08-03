@@ -56,7 +56,7 @@ abstract class Doctrine_Task
         $taskName = (string) $this->getTaskName();
 
         //Derive the task name only if it wasn't entered at design-time
-        if (null === $taskName || ! strlen($taskName)) {
+        if (null === $taskName || 0 !== strlen($taskName)) {
             $taskName = self::deriveTaskName(get_class($this));
         }
 
