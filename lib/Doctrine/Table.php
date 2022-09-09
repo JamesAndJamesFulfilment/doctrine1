@@ -1173,10 +1173,14 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
     {
         // FIX ME: This is being used in places where an array is passed, but it should not be an array
         // For example in places where Doctrine should support composite foreign/primary keys
-        $fieldName = is_array($fieldName) ? $fieldName[0]:$fieldName;
+        $fieldName = is_array($fieldName) ? $fieldName[0] : $fieldName;
 
         if (isset($this->_columnNames[$fieldName])) {
             return $this->_columnNames[$fieldName];
+        }
+
+        if (is_null($fieldName)) {
+            return;
         }
 
         return strtolower($fieldName);
