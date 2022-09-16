@@ -139,11 +139,8 @@ class Doctrine_Node_NestedSet_PreOrderIterator implements Iterator
             if ($this->maxLevel && ($this->level > $this->maxLevel)) {
                 continue;
             }
-
-            return $current;
+            return;
         }
-
-        return false;
     }
 
     /**
