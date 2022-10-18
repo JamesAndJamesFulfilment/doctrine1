@@ -91,7 +91,7 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
         }
 
         if ($keyColumn === null) {
-        	$keyColumn = $table->getAttribute(Doctrine_Core::ATTR_COLL_KEY);
+            $keyColumn = $table->getAttribute(Doctrine_Core::ATTR_COLL_KEY);
         }
 
         if ($keyColumn !== null) {
@@ -172,8 +172,8 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
      *
      * @return array
      */
-    public function __serialize() {
-
+    public function __serialize()
+    {
         $vars = get_object_vars($this);
 
         unset($vars['reference']);

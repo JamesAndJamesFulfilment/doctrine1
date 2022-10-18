@@ -315,14 +315,15 @@ class Doctrine_Connection_Statement implements Doctrine_Adapter_Statement_Interf
      *
      * @return mixed
      */
-    public function fetch($fetchMode = Doctrine_Core::FETCH_BOTH,
-                          $cursorOrientation = Doctrine_Core::FETCH_ORI_NEXT,
-                          $cursorOffset = null)
-    {
+    public function fetch(
+        $fetchMode = Doctrine_Core::FETCH_BOTH,
+        $cursorOrientation = Doctrine_Core::FETCH_ORI_NEXT,
+        $cursorOffset = null
+    ) {
         $event = new Doctrine_Event($this, Doctrine_Event::STMT_FETCH, $this->getQuery());
 
         // null value is not an integer
-        if(null === $cursorOffset) {
+        if (null === $cursorOffset) {
             $cursorOffset = 0;
         }
 
@@ -332,7 +333,7 @@ class Doctrine_Connection_Statement implements Doctrine_Adapter_Statement_Interf
 
         $data = $this->_conn->getListener()->preFetch($event);
 
-        if ( ! $event->skipOperation) {
+        if (!$event->skipOperation) {
             $data = $this->_stmt->fetch($fetchMode, $cursorOrientation, $cursorOffset);
         }
 
