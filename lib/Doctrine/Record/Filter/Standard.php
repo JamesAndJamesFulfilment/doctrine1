@@ -34,22 +34,22 @@
 class Doctrine_Record_Filter_Standard extends Doctrine_Record_Filter
 {
     /**
-     * @param string $propertyOrRelation
+     * @param string $property_or_relation
      *
      * @thrown Doctrine_Record_UnknownPropertyException
      */
-    public function filterSet(Doctrine_Record $record, $propertyOrRelation, $value)
+    public function filterSet(Doctrine_Record $record, $property_or_relation, $value)
     {
-        throw new Doctrine_Record_UnknownPropertyException(sprintf('Unknown record property / related component "%s" on "%s"', $propertyOrRelation, get_class($record)));
+        throw new Doctrine_Record_UnknownPropertyException(sprintf('Unknown record property / related component "%s" on "%s"', $property_or_relation, get_class($record)));
     }
 
     /**
-     * @param string $propertyOrRelation
+     * @param string $property_or_relation
      *
      * @thrown Doctrine_Record_UnknownPropertyException
      */
-    public function filterGet(Doctrine_Record $record, $propertyOrRelation)
+    public function filterGet(Doctrine_Record $record, $property_or_relation)
     {
-        throw new Doctrine_Record_UnknownPropertyException(sprintf('Unknown record property / related component "%s" on "%s"', $propertyOrRelation, get_class($record)));
+        throw new Doctrine_Record_UnknownPropertyException(sprintf('Unknown record property / related component "%s" on "%s"', $property_or_relation, get_class($record)));
     }
 }

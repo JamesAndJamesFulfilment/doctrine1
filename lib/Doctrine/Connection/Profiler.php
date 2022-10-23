@@ -70,6 +70,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
     public function setFilterQueryType()
     {
     }
+
     /**
      * method overloader
      * this method is used for invoking different listeners, for the full
@@ -109,7 +110,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      * @param mixed $key
      * @return Doctrine_Event|null
      */
-    public function get($key)
+    public function get($key): ?Doctrine_Event
     {
         if (isset($this->events[$key])) {
             return $this->events[$key];
@@ -123,7 +124,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      *
      * @return Doctrine_Event[] All events in an array
      */
-    public function getAll()
+    public function getAll(): array
     {
         return $this->events;
     }
@@ -156,11 +157,10 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      *
      * @return Doctrine_Event|null
      */
-    public function pop()
+    public function pop(): ?Doctrine_Event
     {
         $event = array_pop($this->events);
-        if ($event !== null)
-        {
+        if ($event !== null) {
             unset($this->eventSequences[$event->getSequence()]);
         }
         return $event;

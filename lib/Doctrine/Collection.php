@@ -142,7 +142,6 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
         $this->data = $data;
     }
 
-
     /**
      * This method is automatically called when this Doctrine_Collection is serialized
      *

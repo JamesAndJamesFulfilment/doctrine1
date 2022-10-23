@@ -96,7 +96,7 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
     /**
      * @var integer $_id                    the primary keys of this object
      */
-    protected $_id           = array();
+    protected $_id           = [];
 
     /**
      * each element is one of 3 following types:
@@ -106,12 +106,12 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
      *
      * @var array $_data                    the record data
      */
-    protected $_data         = array();
+    protected $_data         = [];
 
     /**
      * @var array $_values                  the values array, aggregate values and such are mapped into this array
      */
-    protected $_values       = array();
+    protected $_values       = [];
 
     /**
      * @var integer $_state                 the state of this record
@@ -122,18 +122,18 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
     /**
      * @var array $_lastModified             an array containing field names that were modified in the previous transaction
      */
-    protected $_lastModified = array();
+    protected $_lastModified = [];
 
     /**
      * @var array $_modified                an array containing field names that have been modified
      * @todo Better name? $_modifiedFields?
      */
-    protected $_modified     = array();
+    protected $_modified     = [];
 
     /**
      * @var array $_oldValues               an array of the old values from set properties
      */
-    protected $_oldValues   = array();
+    protected $_oldValues   = [];
 
     /**
      * @var Doctrine_Validator_ErrorStack   error stack object
@@ -143,35 +143,35 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
     /**
      * @var array $_references              an array containing all the references
      */
-    protected $_references     = array();
+    protected $_references     = [];
 
     /**
      * Doctrine_Collection of objects needing to be deleted on save
      *
      * @var string
      */
-    protected $_pendingDeletes = array();
+    protected $_pendingDeletes = [];
     
     /**
      * Array of pending un links in format alias => keys to be executed after save
      *
      * @var array $_pendingUnlinks
      */
-    protected $_pendingUnlinks = array();
+    protected $_pendingUnlinks = [];
 
     /**
      * Array of custom accessors for cache
      *
      * @var array
      */
-    protected static $_customAccessors = array();
+    protected static $_customAccessors = [];
 
     /**
      * Array of custom mutators for cache
      *
      * @var array
      */
-    protected static $_customMutators = array();
+    protected static $_customMutators = [];
 
     /**
      * Whether or not to serialize references when a Doctrine_Record is serialized
@@ -185,7 +185,7 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
      *
      * @var array
      */
-    protected $_invokedSaveHooks = array();
+    protected $_invokedSaveHooks = [];
 
     /**
      * @var integer $index                  this index is used for creating object identifiers
