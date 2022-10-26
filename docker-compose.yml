@@ -15,29 +15,11 @@ services:
       - |
         exec tail -f /dev/null
 
-  php53:
-    build: .docker/php53
-    working_dir: /app/tests
-    volumes:
-      - .:/app
-      - db_socket:/var/run/mysqld
-    entrypoint:
-      - sh
-      - -c
-      - |
-        {
-          echo 'pdo_mysql.default_socket = /var/run/mysqld/mysql.sock'
-          echo 'memory_limit = -1'
-          echo 'short_open_tag = off'
-          echo 'magic_quotes_gpc = off'
-          echo 'date.timezone = "UTC"'
-        } | tee -a /usr/local/lib/php.ini
-
-        exec tail -f /dev/null
-
-  php54: &services_php54
+  php81:
     build:
-      context: .docker/php54
+      context: .docker/php74_81
+      args:
+        PHP_VERSION: '8.1'
     working_dir: /app/tests
     volumes:
       - .:/app
@@ -57,69 +39,6 @@ services:
         exec tail -f /dev/null
     depends_on:
       - db
-
-  php55:
-    <<: *services_php54
-    build:
-      context: .docker/php55_71
-      args:
-        PHP_TAG: '5.5-cli'
-
-  php56:
-    <<: *services_php54
-    build:
-      context: .docker/php55_71
-      args:
-        PHP_TAG: '5.6-cli-jessie'
-
-  php70:
-    <<: *services_php54
-    build:
-      context: .docker/php55_71
-      args:
-        PHP_TAG: '7.0-cli-jessie'
-
-  php71:
-    <<: *services_php54
-    build:
-      context: .docker/php55_71
-      args:
-        PHP_TAG: '7.1-cli-jessie'
-
-  php72:
-    <<: *services_php54
-    build:
-      context: .docker/php72_73
-      args:
-        PHP_VERSION: '7.2'
-
-  php73:
-    <<: *services_php54
-    build:
-      context: .docker/php72_73
-      args:
-        PHP_VERSION: '7.3'
-
-  php74:
-    <<: *services_php54
-    build:
-      context: .docker/php74_81
-      args:
-        PHP_VERSION: '7.4'
-
-  php80:
-    <<: *services_php54
-    build:
-      context: .docker/php74_81
-      args:
-        PHP_VERSION: '8.0'
-
-  php81:
-    <<: *services_php54
-    build:
-      context: .docker/php74_81
-      args:
-        PHP_VERSION: '8.1'
 
   db:
     image: mysql:5.5.62
