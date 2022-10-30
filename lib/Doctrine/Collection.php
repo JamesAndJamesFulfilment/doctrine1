@@ -91,7 +91,7 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
         }
 
         if ($keyColumn === null) {
-        	$keyColumn = $table->getAttribute(Doctrine_Core::ATTR_COLL_KEY);
+            $keyColumn = $table->getAttribute(Doctrine_Core::ATTR_COLL_KEY);
         }
 
         if ($keyColumn !== null) {
@@ -145,9 +145,33 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
     /**
      * This method is automatically called when this Doctrine_Collection is serialized
      *
-     * @return array
+     * @return string
      */
     public function serialize()
+    {
+        $vars = $this->__serialize();
+
+        return serialize($vars);
+    }
+
+    /**
+     * This method is automatically called everytime a Doctrine_Collection object is unserialized
+     *
+     * @return void
+     */
+    public function unserialize($serialized)
+    {
+        $array = unserialize($serialized);
+
+        $this->__unserialize($array);
+    }
+
+    /**
+     * Serializes the current instance for php 7.4+
+     *
+     * @return array
+     */
+    public function __serialize()
     {
         $vars = get_object_vars($this);
 
@@ -160,22 +184,21 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
 
         $vars['_table'] = $vars['_table']->getComponentName();
 
-        return serialize($vars);
+        return $vars;
     }
 
     /**
-     * This method is automatically called everytime a Doctrine_Collection object is unserialized
+     * Unserializes a Doctrine_Collection instance for php 7.4+
      *
-     * @return void
+     * @param string $serialized  A serialized Doctrine_Collection instance
      */
-    public function unserialize($serialized)
+    public function __unserialize($data)
     {
         $manager    = Doctrine_Manager::getInstance();
         $connection    = $manager->getCurrentConnection();
 
-        $array = unserialize($serialized);
 
-        foreach ($array as $name => $values) {
+        foreach ($data as $name => $values) {
             $this->$name = $values;
         }
 
@@ -432,6 +455,7 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
      *
      * @return integer
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->data);
@@ -1036,6 +1060,7 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
      *
      * @return Iterator
      */
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         $data = $this->data;

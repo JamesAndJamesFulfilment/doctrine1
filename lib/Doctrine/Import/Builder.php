@@ -923,7 +923,7 @@ class Doctrine_Import_Builder extends Doctrine_Builder
      * @param array  $emittedActAs contains on output an array of actAs command to be appended to output
      * @return string actAs full definition
      */
-    private function innerBuildActAs($actAs, $level = 0, $parent = null, array &$emittedActAs)
+    private function innerBuildActAs($actAs, $level = 0, $parent = null, array &$emittedActAs = [])
     {
         // rewrite special case of actAs: [Behavior] which gave [0] => Behavior
         if (is_array($actAs) && isset($actAs[0]) && !is_array($actAs[0])) {
@@ -941,7 +941,7 @@ class Doctrine_Import_Builder extends Doctrine_Builder
         $build = '';
         $currentParent = $parent;
         if (is_array($actAs)) {
-            foreach($actAs as $template => $options) {
+            foreach ($actAs as $template => $options) {
                 if ($template == 'actAs') {
                     // found another actAs
                     $build .= $this->innerBuildActAs($options, $level + 1, $parent, $emittedActAs);
@@ -949,7 +949,7 @@ class Doctrine_Import_Builder extends Doctrine_Builder
                     // remove actAs from options
                     $realOptions = array();
                     $leftActAs = array();
-                    foreach($options as $name => $value) {
+                    foreach ($options as $name => $value) {
                         if ($name != 'actAs') {
                             $realOptions[$name] = $options[$name];
                         } else {

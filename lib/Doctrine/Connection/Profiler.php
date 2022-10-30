@@ -57,8 +57,8 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
     /**
      * constructor
      */
-    public function __construct() {
-
+    public function __construct()
+    {
     }
 
     /**
@@ -67,9 +67,10 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      * @param integer $filter
      * @return boolean
      */
-    public function setFilterQueryType() {
-                                             
-    }                                         
+    public function setFilterQueryType()
+    {
+    }
+
     /**
      * method overloader
      * this method is used for invoking different listeners, for the full
@@ -83,7 +84,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
     public function __call($m, $a)
     {
         // first argument should be an instance of Doctrine_Event
-        if ( ! ($a[0] instanceof Doctrine_Event)) {
+        if (!($a[0] instanceof Doctrine_Event)) {
             throw new Doctrine_Connection_Profiler_Exception("Couldn't listen event. Event should be an instance of Doctrine_Event.");
         }
 
@@ -93,7 +94,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
             $a[0]->start();
 
             $eventSequence = $a[0]->getSequence();
-            if ( ! isset($this->eventSequences[$eventSequence])) {
+            if (!isset($this->eventSequences[$eventSequence])) {
                 $this->events[] = $a[0];
                 $this->eventSequences[$eventSequence] = true;
             }
@@ -107,9 +108,9 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      * get
      *
      * @param mixed $key
-     * @return Doctrine_Event
+     * @return Doctrine_Event|null
      */
-    public function get($key) 
+    public function get($key): ?Doctrine_Event
     {
         if (isset($this->events[$key])) {
             return $this->events[$key];
@@ -121,9 +122,9 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      * getAll
      * returns all profiled events as an array
      *
-     * @return array        all events in an array
+     * @return Doctrine_Event[] All events in an array
      */
-    public function getAll() 
+    public function getAll(): array
     {
         return $this->events;
     }
@@ -134,6 +135,7 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
      *
      * @return ArrayIterator
      */
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new ArrayIterator($this->events);
@@ -141,10 +143,11 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
 
     /**
      * count
-     * 
+     *
      * @return integer
      */
-    public function count() 
+    #[\ReturnTypeWillChange]
+    public function count()
     {
         return count($this->events);
     }
@@ -152,13 +155,12 @@ class Doctrine_Connection_Profiler implements Doctrine_Overloadable, IteratorAgg
     /**
      * pop the last event from the event stack
      *
-     * @return Doctrine_Event
+     * @return Doctrine_Event|null
      */
-    public function pop() 
+    public function pop(): ?Doctrine_Event
     {
         $event = array_pop($this->events);
-        if ($event !== null)
-        {
+        if ($event !== null) {
             unset($this->eventSequences[$event->getSequence()]);
         }
         return $event;

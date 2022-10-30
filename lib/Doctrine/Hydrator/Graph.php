@@ -99,19 +99,19 @@ abstract class Doctrine_Hydrator_Graph extends Doctrine_Hydrator_Abstract
         $event = new Doctrine_Event(null, Doctrine_Event::HYDRATE, null);
 
         if ($this->_hydrationMode == Doctrine_Core::HYDRATE_ON_DEMAND) {
-            if ( ! is_null($this->_priorRow)) {
+            if (!is_null($this->_priorRow)) {
                 $data = $this->_priorRow;
                 $this->_priorRow = null;
             } else {
                 $data = $stmt->fetch(Doctrine_Core::FETCH_ASSOC);
-                if ( ! $data) {
+                if (!$data) {
                     return $result;
                 }
             }
             $activeRootIdentifier = null;
         } else {
             $data = $stmt->fetch(Doctrine_Core::FETCH_ASSOC);
-            if ( ! $data) {
+            if (!$data) {
                 $stmt->closeCursor();
                 return $result;
             }
@@ -121,14 +121,16 @@ abstract class Doctrine_Hydrator_Graph extends Doctrine_Hydrator_Abstract
             $table = $this->_queryComponents[$rootAlias]['table'];
 
             if ($table->getConnection()->getAttribute(Doctrine_Core::ATTR_PORTABILITY) & Doctrine_Core::PORTABILITY_RTRIM) {
-                array_map('rtrim', $data);
+                foreach ($data as $key => $foo) {
+                    $data[$key] = (is_string($foo)) ? rtrim($foo) : $foo;
+                }
             }
 
             $id = $idTemplate; // initialize the id-memory
             $nonemptyComponents = array();
             $rowData = $this->_gatherRowData($data, $cache, $id, $nonemptyComponents);
 
-            if ($this->_hydrationMode == Doctrine_Core::HYDRATE_ON_DEMAND)  {
+            if ($this->_hydrationMode == Doctrine_Core::HYDRATE_ON_DEMAND) {
                 if (is_null($activeRootIdentifier)) {
                     // first row for this record
                     $activeRootIdentifier = $id[$rootAlias];

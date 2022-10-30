@@ -32,66 +32,89 @@
  */
 class Doctrine_Record_Filter_Compound extends Doctrine_Record_Filter
 {
+    /**
+     * @var string[]
+     */
     protected $_aliases = array();
 
+    /**
+     * @param string[] $aliases A list of relation name
+     */
     public function __construct(array $aliases)
     {
         $this->_aliases = $aliases;
     }
 
+    /**
+     * @throws Doctrine_Table_Exception when at least one configured alias is not a relation
+     */
     public function init()
     {
-    	// check that all aliases exist
-    	foreach ($this->_aliases as $alias) {
+        // check that all aliases exist
+        foreach ($this->_aliases as $alias) {
             $this->_table->getRelation($alias);
-    	}
+        }
     }
 
     /**
-     * filterSet
-     * defines an implementation for filtering the set() method of Doctrine_Record
+     * Provides a way for setting property or relation value to the given record.
      *
-     * @param mixed $name                       name of the property or related component
+     * @param string $property_or_relation
+     *
+     * @return Doctrine_Record the given record
+     *
+     * @thrown Doctrine_Record_UnknownPropertyException when this way is not available
      */
-    public function filterSet(Doctrine_Record $record, $name, $value)
+    public function filterSet(Doctrine_Record $record, $property_or_relation, $value)
     {
         foreach ($this->_aliases as $alias) {
-            if ( ! $record->exists()) {
-                if (isset($record[$alias][$name])) {
-                    $record[$alias][$name] = $value;
-                    
+            // The relationship must be fetched in order to check the field existence.
+            // Related to PHP-7.0 compatibility so an explicit call to method get is required.
+            $record[$alias];
+
+            if (!$record->exists()) {
+                if (isset($record[$alias][$property_or_relation])) {
+                    $record[$alias][$property_or_relation] = $value;
+
                     return $record;
                 }
             } else {
-                if (isset($record[$alias][$name])) {
-                    $record[$alias][$name] = $value;
+                if (isset($record[$alias][$property_or_relation])) {
+                    $record[$alias][$property_or_relation] = $value;
                 }
 
                 return $record;
             }
         }
-        throw new Doctrine_Record_UnknownPropertyException(sprintf('Unknown record property / related component "%s" on "%s"', $name, get_class($record)));
+        throw new Doctrine_Record_UnknownPropertyException(sprintf('Unknown record property / related component "%s" on "%s"', $property_or_relation, get_class($record)));
     }
 
     /**
-     * filterGet
-     * defines an implementation for filtering the get() method of Doctrine_Record
+     * Provides a way for getting property or relation value from the given record.
      *
-     * @param mixed $name                       name of the property or related component
+     * @param string $property_or_relation
+     *
+     * @return mixed
+     *
+     * @thrown Doctrine_Record_UnknownPropertyException when this way is not available
      */
-    public function filterGet(Doctrine_Record $record, $name)
+    public function filterGet(Doctrine_Record $record, $property_or_relation)
     {
         foreach ($this->_aliases as $alias) {
-            if ( ! $record->exists()) {
-                if (isset($record[$alias][$name])) {
-                    return $record[$alias][$name];
+            // The relationship must be fetched in order to check the field existence.
+            // Related to PHP-7.0 compatibility so an explicit call to method get is required.
+            $record[$alias];
+
+            if (!$record->exists()) {
+                if (isset($record[$alias][$property_or_relation])) {
+                    return $record[$alias][$property_or_relation];
                 }
             } else {
-                if (isset($record[$alias][$name])) {
-                    return $record[$alias][$name];
+                if (isset($record[$alias][$property_or_relation])) {
+                    return $record[$alias][$property_or_relation];
                 }
             }
         }
-        throw new Doctrine_Record_UnknownPropertyException(sprintf('Unknown record property / related component "%s" on "%s"', $name, get_class($record)));
+        throw new Doctrine_Record_UnknownPropertyException(sprintf('Unknown record property / related component "%s" on "%s"', $property_or_relation, get_class($record)));
     }
 }

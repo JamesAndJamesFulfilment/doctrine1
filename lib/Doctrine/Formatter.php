@@ -130,7 +130,7 @@ class Doctrine_Formatter extends Doctrine_Connection_Module
         // http://www.doctrine-project.org/jira/browse/DC-972
         if ((substr($str, 0, 1) === $tmp['start']) && (substr($str, -1) === $tmp['end'])) {
             return $str;
-        }   
+        }
 
         $str = str_replace($tmp['end'],
             $tmp['escape'] .
@@ -155,7 +155,7 @@ class Doctrine_Formatter extends Doctrine_Connection_Module
             $arr[$k] = $this->quoteIdentifier($v, $checkOption);
         }
 
-		return $arr;
+        return $arr;
     }
 
     /**
@@ -277,6 +277,6 @@ class Doctrine_Formatter extends Doctrine_Connection_Module
     public function getTableName($table)
     {
         $format = $this->conn->getAttribute(Doctrine_Core::ATTR_TBLNAME_FORMAT);
-        return sprintf($format, str_replace(sprintf($format, null), null, $table));
+        return sprintf($format, str_replace(sprintf($format, null), '', $table));
     }
 }
