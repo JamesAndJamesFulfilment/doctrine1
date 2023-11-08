@@ -15,7 +15,7 @@ services:
       - |
         exec tail -f /dev/null
 
-  php81:
+  php81:  &services_php8x
     build:
       context: .docker/php74_81
       args:
@@ -39,6 +39,45 @@ services:
         exec tail -f /dev/null
     depends_on:
       - db
+
+  php82:  &services_php8x
+    build:
+      context: .docker/php74_81
+      args:
+        PHP_VERSION: '8.2'
+    working_dir: /app/tests
+    volumes:
+      - .:/app
+      - db_socket:/var/run/mysqld
+    entrypoint:
+      - sh
+      - -c
+      - |
+        {
+          echo 'pdo_mysql.default_socket = /var/run/mysqld/mysql.sock'
+          echo 'memory_limit = -1'
+          echo 'short_open_tag = off'
+          echo 'magic_quotes_gpc = off'
+          echo 'date.timezone = "UTC"'
+        } | tee -a /usr/local/etc/php/php.ini
+
+        exec tail -f /dev/null
+    depends_on:
+      - db
+
+  php81:
+    <<: *services_php8x
+    build:
+      context: .docker/php74_82
+      args:
+        PHP_VERSION: '8.1'
+
+  php82:
+    <<: *services_php8x
+    build:
+      context: .docker/php74_82
+      args:
+        PHP_VERSION: '8.2'
 
   db:
     image: mysql:5.5.62
