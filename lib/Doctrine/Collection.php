@@ -195,42 +195,8 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
      */
     public function __unserialize($data)
     {
-        $array = unserialize($serialized);
-
-        $this->__unserialize($array);
-    }
-
-    /**
-     * Serializes the current instance for php 7.4+
-     *
-     * @return array
-     */
-    public function __serialize() {
-
-        $vars = get_object_vars($this);
-
-        unset($vars['reference']);
-        unset($vars['referenceField']);
-        unset($vars['relation']);
-        unset($vars['expandable']);
-        unset($vars['expanded']);
-        unset($vars['generator']);
-
-        $vars['_table'] = $vars['_table']->getComponentName();
-
-        return $vars;
-    }
-
-    /**
-     * Unserializes a Doctrine_Collection instance for php 7.4+
-     *
-     * @param string $serialized  A serialized Doctrine_Collection instance
-     */
-    public function __unserialize($data)
-    {
         $manager    = Doctrine_Manager::getInstance();
         $connection    = $manager->getCurrentConnection();
-
 
         foreach ($data as $name => $values) {
             $this->$name = $values;
