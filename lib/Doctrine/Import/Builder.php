@@ -1428,7 +1428,7 @@ class Doctrine_Import_Builder extends Doctrine_Builder
             $code .= "Doctrine_Manager::getInstance()->bindComponent('" . $definition['connectionClassName'] . "', '" . $definition['connection'] . "');" . PHP_EOL;
         }
 
-        $code .= PHP_EOL . $definitionCode;
+        $code .= PHP_EOL . $definitionCode . PHP_EOL;
 
         if ($this->_eolStyle) {
             $code = str_replace(PHP_EOL, $this->_eolStyle, $code);
