@@ -810,12 +810,11 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
     /**
      * Populate a Doctrine_Collection from an array of data
      *
-     * @param string $array
+     * @param array $array
      * @return void
      */
     public function fromArray($array, $deep = true)
     {
-        $data = array();
         foreach ($array as $rowKey => $row) {
             $this[$rowKey]->fromArray($row, $deep);
         }

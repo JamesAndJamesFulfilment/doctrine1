@@ -1,6 +1,6 @@
 <?php
 
-$_SERVER['DOCTRINE_DIR'] = realpath(__DIR__.'/../');
+$_SERVER['DOCTRINE_DIR'] = dirname(__DIR__);
 
 require 'bootstrap.php';
 

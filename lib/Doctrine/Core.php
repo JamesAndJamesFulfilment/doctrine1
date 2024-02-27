@@ -564,7 +564,7 @@ class Doctrine_Core
     public static function getPath()
     {
         if ( ! self::$_path) {
-            self::$_path = realpath(__DIR__ . '/..');
+            self::$_path = dirname(__DIR__);
         }
 
         return self::$_path;
