@@ -34,11 +34,6 @@
             "Doctrine_": "lib/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-php81": "1.5-dev"
-        }
-    },
     "config": {
         "sort-packages": true
     }
