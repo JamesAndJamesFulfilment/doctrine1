@@ -35,7 +35,9 @@
  */
 abstract class Doctrine_Hydrator_Graph extends Doctrine_Hydrator_Abstract
 {
-    protected $_tables = array();
+    protected
+        $_tables = array(),
+        $_rootAlias = null;
 
     /**
      * Gets the custom field used for indexing for the specified component alias.
@@ -48,6 +50,9 @@ abstract class Doctrine_Hydrator_Graph extends Doctrine_Hydrator_Abstract
         return isset($this->_queryComponents[$alias]['map']) ? $this->_queryComponents[$alias]['map'] : null;
     }
 
+    /**
+     * @return Doctrine_Collection|mixed
+     */
     public function hydrateResultSet($stmt)
     {
         // Used variables during hydration
@@ -306,11 +311,17 @@ abstract class Doctrine_Hydrator_Graph extends Doctrine_Hydrator_Abstract
                 $table = $this->_queryComponents[$cache[$key]['dqlAlias']]['table'];
                 $fieldName = $table->getFieldName($last);
                 $cache[$key]['fieldName'] = $fieldName;
+
+                if (isset($this->_queryComponents[$cache[$key]['dqlAlias']]['agg_field'][$last])) {
+                    $fieldName = $this->_queryComponents[$cache[$key]['dqlAlias']]['agg_field'][$last];
+                }
+
                 if ($table->isIdentifier($fieldName)) {
                     $cache[$key]['isIdentifier'] = true;
                 } else {
                   $cache[$key]['isIdentifier'] = false;
                 }
+
                 $type = $table->getTypeOfColumn($last);
                 if ($type == 'integer' || $type == 'string') {
                     $cache[$key]['isSimpleType'] = true;

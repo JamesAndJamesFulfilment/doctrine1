@@ -113,4 +113,28 @@ class Doctrine_Transaction_Mysql extends Doctrine_Transaction
     {
         return $this->conn->fetchOne('SELECT @@tx_isolation');
     }
+
+    /**
+     * Performs the rollback.
+     */
+    protected function _doRollback()
+    {
+        $this->conn->getDbh()->exec('ROLLBACK');
+    }
+
+    /**
+     * Performs the commit.
+     */
+    protected function _doCommit()
+    {
+        $this->conn->getDbh()->exec('COMMIT');
+    }
+
+    /**
+     * Begins a database transaction.
+     */
+    protected function _doBeginTransaction()
+    {
+        $this->conn->getDbh()->exec('START TRANSACTION');
+    }
 }
