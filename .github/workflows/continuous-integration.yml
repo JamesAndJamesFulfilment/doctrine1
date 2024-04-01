@@ -12,7 +12,7 @@ on:
 
   push:
     branches:
-      - php82
+      - master
     paths:
       - .github/workflows/continuous-integration.yml
       - composer.*
