@@ -1179,7 +1179,7 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
             return $this->_columnNames[$fieldName];
         }
 
-        if (is_null($fieldName)) {
+        if (null === $fieldName) {
             return '';
         }
 
