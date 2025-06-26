@@ -3107,23 +3107,6 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
     }
 
     /**
-     * See documentation on Epoch.class.php for parameter details
-     *
-     * @param int $duration
-     * @param string $interval_type
-     * @param string $timestamp_field
-     * @param array $query_constraints
-     *
-     * @throws sfException - one of the provided types was invalid
-     * @return int
-     */
-    public static function getEpoch($duration = 1, $interval_type = Interval::YEAR, $timestamp_field = 'created_at', $query_constraints = [])
-    {
-        $entity = str_replace('Table', '', static::class);
-        return Epoch::generate($entity, $duration, $interval_type, $timestamp_field, $query_constraints);
-    }
-
-    /**
      * Most of the time this is faster than doing a count query, this is because we just
      * return the PDO cursor and fetch the number of rows loaded into it.
      *
