@@ -187,10 +187,7 @@ class Doctrine_Query extends Doctrine_Query_Abstract implements Countable
         return new $class($conn);
     }
 
-    /**
-     * Clears all the sql parts.
-     */
-    protected function clear()
+    protected function clear(): void
     {
         $this->_preQueried = false;
         $this->_pendingJoinConditions = array();
@@ -2214,9 +2211,9 @@ class Doctrine_Query extends Doctrine_Query_Abstract implements Countable
     /**
      * Copies a Doctrine_Query object.
      *
-     * @return Doctrine_Query  Copy of the Doctrine_Query instance.
+     * @return Doctrine_Query|null  Copy of the Doctrine_Query instance.
      */
-    public function copy(Doctrine_Query $query = null)
+    public function copy(?Doctrine_Query $query = null)
     {
         if ( ! $query) {
             $query = $this;
