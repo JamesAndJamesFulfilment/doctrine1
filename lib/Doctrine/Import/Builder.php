@@ -1359,15 +1359,7 @@ class Doctrine_Import_Builder extends Doctrine_Builder
             $extends = $this->_classPrefix . $extends;
         }
 
-        $code = sprintf("    /**
-     * Returns an instance of this class.
-     *
-     * @return %s The table instance
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('%s');
-    }", $className, $definition['className']);
+        $code = '';
 
         $docBlock = array();
         $docBlock[] = $className;
