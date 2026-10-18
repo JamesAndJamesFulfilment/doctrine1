@@ -109,7 +109,7 @@ class Doctrine_Node_NestedSet_PreOrderIterator implements Iterator
     /**
      * returns the current key
      *
-     * @return integer
+     * @return mixed
      */
     public function key(): mixed
     {
