@@ -160,7 +160,7 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
      *
      * @param string $serialized  A serialized Doctrine_Collection instance
      */
-    public function __unserialize($data)
+    public function unserialize($data)
     {
         $array = unserialize($serialized);
 
