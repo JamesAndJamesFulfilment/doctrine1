@@ -152,15 +152,15 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
     {
         $vars = $this->__serialize();
 
-        return serialize($vars);
+        return $vars;
     }
 
     /**
-     * This method is automatically called everytime a Doctrine_Collection object is unserialized
+     * Unserializes a Doctrine_Collection instance for php 7.4+
      *
-     * @return void
+     * @param string $serialized  A serialized Doctrine_Collection instance
      */
-    public function unserialize($serialized)
+    public function unserialize($data)
     {
         $array = unserialize($serialized);
 
@@ -172,8 +172,8 @@ class Doctrine_Collection extends Doctrine_Access implements Countable, Iterator
      *
      * @return array
      */
-    public function __serialize()
-    {
+    public function __serialize() {
+
         $vars = get_object_vars($this);
 
         unset($vars['reference']);

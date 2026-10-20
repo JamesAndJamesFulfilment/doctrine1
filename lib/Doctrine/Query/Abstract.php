@@ -397,7 +397,7 @@ abstract class Doctrine_Query_Abstract
      */
     public function setAutoFree($value = true)
     {
-        $this->_autoFree = (boolean) $value;
+        $this->_autoFree = (bool) $value;
 
         return $this;
     }
